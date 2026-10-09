@@ -71,6 +71,12 @@ export function PlayPage() {
   const token = useRef(0)
 
   useEffect(() => storage.set('play-settings', settings), [settings])
+  // During a game phones hide the bottom tab bar, so the board and controls fit on screen.
+  useEffect(() => {
+    if (!game) return
+    document.documentElement.classList.add('in-game')
+    return () => document.documentElement.classList.remove('in-game')
+  }, [game])
   // Leaving the page cancels any pending engine reply.
   useEffect(() => () => void token.current++, [])
 
@@ -216,17 +222,17 @@ export function PlayPage() {
           <PlayerBar label={t('play.you')} captured={opponentLost} advantage={myBalance} />
         </div>
         <div className="stage-panel">
-          <FeedbackBox feedback={status} />
+          <FeedbackBox feedback={status} reveal={false} />
           {hint && myTurn && <p className="muted small">{t('play.hintShown')}</p>}
-          <div className="button-row">
+          <div className="button-row play-actions">
             <button type="button" className="btn" disabled={!myTurn || hintLoading} onClick={showHint}>
-              💡 {t('play.hint')}
+              <span aria-hidden>💡</span> {t('play.hint')}
             </button>
             <button type="button" className="btn" disabled={playerMoves === 0} onClick={undo}>
-              ↩ {t('play.undo')}
+              <span aria-hidden>↩</span> {t('play.undo')}
             </button>
             <button type="button" className="btn" onClick={() => setOrientation(orientation === 'w' ? 'b' : 'w')}>
-              ⇅ {t('play.flip')}
+              <span aria-hidden>⇅</span> {t('play.flip')}
             </button>
           </div>
           <div className="move-list">

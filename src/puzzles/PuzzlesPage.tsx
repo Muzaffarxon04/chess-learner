@@ -72,8 +72,9 @@ export function PuzzleView({ id }: { id: string }) {
   return (
     <div className="page">
       <div className="lesson-head">
-        <a href={href('puzzles')} className="back-link">
-          {t('puzzle.back')}
+        <a href={href('puzzles')} className="back-link" aria-label={t('nav.puzzles')}>
+          <span aria-hidden>←</span>
+          <span className="back-text">{t('nav.puzzles')}</span>
         </a>
         <h1>
           {t('puzzle.title', { n: index + 1 })} · <span className="muted">{t(`theme.${puzzle.theme}`)}</span>

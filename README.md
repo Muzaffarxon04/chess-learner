@@ -12,6 +12,15 @@ npm test           # barcha testlar (vitest)
 npm run build      # production build -> dist/
 ```
 
+### Telefonda sinab ko'rish
+
+```bash
+npm run dev -- --host   # terminalda chiqqan "Network" manzilini telefonda oching (bir xil Wi-Fi)
+```
+
+Production build'da dastur telefonga ilova sifatida o'rnatiladi ("Bosh ekranga qo'shish") va internetsiz ham ishlaydi
+(`public/manifest.webmanifest`, `public/sw.js`).
+
 ## Bo'limlar
 
 - **Darslar** (15 ta) — taxta va kataklar, har bir figuraning yurishi, piyodaning aylanishi,

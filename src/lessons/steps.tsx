@@ -36,10 +36,17 @@ export function Stage({ board, children }: { board: ReactNode; children: ReactNo
   )
 }
 
-export function FeedbackBox({ feedback }: { feedback: Feedback }) {
+export function FeedbackBox({ feedback, reveal = true }: { feedback: Feedback; reveal?: boolean }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const text = feedback?.text
+  useEffect(() => {
+    // On small phones a new message can land below the screen edge (or under
+    // the fixed "Next" bar); scroll just enough to show it.
+    if (reveal && text) ref.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+  }, [reveal, text])
   if (!feedback) return null
   return (
-    <div className={`feedback ${feedback.kind}`} role="status">
+    <div ref={ref} className={`feedback ${feedback.kind}`} role="status">
       {feedback.text}
     </div>
   )

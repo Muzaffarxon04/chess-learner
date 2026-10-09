@@ -19,13 +19,17 @@ export default function App() {
   else page = <HomePage />
 
   const navItems = [
-    { key: 'lessons', label: t('nav.lessons') },
-    { key: 'puzzles', label: t('nav.puzzles') },
-    { key: 'play', label: t('nav.play') },
+    { key: '', label: t('nav.home'), icon: '🏠' },
+    { key: 'lessons', label: t('nav.lessons'), icon: '📚' },
+    { key: 'puzzles', label: t('nav.puzzles'), icon: '🧩' },
+    { key: 'play', label: t('nav.play'), icon: '♟️' },
   ] as const
+  // A single lesson or puzzle is a focused screen: on phones the tab bar
+  // makes room for the lesson's own fixed "Next" bar.
+  const focused = (section === 'lessons' || section === 'puzzles') && !!id
 
   return (
-    <div className="app">
+    <div className={`app${focused ? ' focused' : ''}`}>
       <header className="topbar">
         <a className="brand" href={href()}>
           <img src={PIECE_IMAGES.wK} alt="" />
@@ -35,8 +39,15 @@ export default function App() {
         </a>
         <nav className="nav">
           {navItems.map((item) => (
-            <a key={item.key} href={href(item.key)} className={section === item.key ? 'active' : ''}>
-              {item.label}
+            <a
+              key={item.key}
+              href={item.key ? href(item.key) : href()}
+              className={`${(section ?? '') === item.key ? 'active' : ''}${item.key ? '' : ' home-tab'}`}
+            >
+              <span className="nav-icon" aria-hidden>
+                {item.icon}
+              </span>
+              <span className="nav-label">{item.label}</span>
             </a>
           ))}
         </nav>

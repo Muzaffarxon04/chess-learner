@@ -41,8 +41,9 @@ export function LessonPage({ id }: { id: string }) {
 
   const header = (
     <div className="lesson-head">
-      <a href={href('lessons')} className="back-link">
-        {t('lesson.back')}
+      <a href={href('lessons')} className="back-link" aria-label={t('nav.lessons')}>
+        <span aria-hidden>←</span>
+        <span className="back-text">{t('nav.lessons')}</span>
       </a>
       <h1>{tx(lesson.title)}</h1>
       <div className="step-dots" aria-label={t('lesson.step', { n: stepIndex + 1, total: lesson.steps.length })}>
