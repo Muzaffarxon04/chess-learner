@@ -2,7 +2,7 @@ import type { Text } from './types'
 
 /** Interface strings. Lesson and puzzle content lives next to its data. */
 export const ui = {
-  appName: { uz: 'Shaxmat Maktabi', ru: 'Шахматная школа', en: 'Chess School' },
+  appName: { uz: 'Shoh & Mot', ru: 'Shoh & Mot', en: 'Shoh & Mot' },
   'nav.home': { uz: 'Bosh sahifa', ru: 'Главная', en: 'Home' },
   'nav.lessons': { uz: 'Darslar', ru: 'Уроки', en: 'Lessons' },
   'nav.puzzles': { uz: 'Masalalar', ru: 'Задачи', en: 'Puzzles' },
@@ -19,12 +19,12 @@ export const ui = {
     en: 'Learn step by step how the pieces move, solve puzzles and play against the computer.',
   },
   'home.lessons': {
-    uz: "Taxta, figuralarning yurishi, rokirovka, shax va mat — interaktiv mashqlar bilan.",
+    uz: "Taxta, figuralarning yurishi, rokirovka, shax va mot — interaktiv mashqlar bilan.",
     ru: 'Доска, ходы фигур, рокировка, шах и мат — с интерактивными упражнениями.',
     en: 'The board, how pieces move, castling, check and mate — with interactive exercises.',
   },
   'home.puzzles': {
-    uz: "1 va 2 yurishda mat, vilka va boshqa taktik usullar.",
+    uz: "1 va 2 yurishda mot, vilka va boshqa taktik usullar.",
     ru: 'Мат в 1 и 2 хода, вилки и другие тактические приёмы.',
     en: 'Mate in 1 and 2, forks and other tactical tricks.',
   },
@@ -109,7 +109,7 @@ export const ui = {
     en: "Stalemate! Your opponent has no moves but isn't in check — that's a draw. Try again.",
   },
   'goal.checkNotMate': {
-    uz: "Shax, lekin mat emas — shoh qochib qutula oladi. Qayta urinib ko'ring.",
+    uz: "Shax, lekin mot emas — shoh qochib qutula oladi. Qayta urinib ko'ring.",
     ru: 'Шах, но не мат — король может уйти. Попробуйте ещё раз.',
     en: 'Check, but not mate — the king can escape. Try again.',
   },
@@ -123,16 +123,16 @@ export const ui = {
     ru: 'В каждой задаче найдите лучший ход. Если трудно — нажмите «Подсказка».',
     en: 'Find the best move in each puzzle. Stuck? Press “Hint”.',
   },
-  'theme.mate1': { uz: '1 yurishda mat', ru: 'Мат в 1 ход', en: 'Mate in 1' },
-  'theme.mate2': { uz: '2 yurishda mat', ru: 'Мат в 2 хода', en: 'Mate in 2' },
+  'theme.mate1': { uz: '1 yurishda mot', ru: 'Мат в 1 ход', en: 'Mate in 1' },
+  'theme.mate2': { uz: '2 yurishda mot', ru: 'Мат в 2 хода', en: 'Mate in 2' },
   'theme.tactics': { uz: 'Material yutish', ru: 'Выигрыш материала', en: 'Win material' },
   'theme.mate1.task': {
-    uz: 'Bir yurishda mat qo\'ying.',
+    uz: 'Bir yurishda mot qo\'ying.',
     ru: 'Поставьте мат в один ход.',
     en: 'Checkmate in one move.',
   },
   'theme.mate2.task': {
-    uz: "Ikki yurishda mat qo'ying. Raqib eng yaxshi himoyani tanlaydi.",
+    uz: "Ikki yurishda mot qo'ying. Raqib eng yaxshi himoyani tanlaydi.",
     ru: 'Поставьте мат в два хода. Соперник будет защищаться лучшим образом.',
     en: 'Checkmate in two moves. Your opponent will defend as well as possible.',
   },
@@ -191,15 +191,15 @@ export const ui = {
   'play.yourTurn': { uz: 'Sizning navbatingiz', ru: 'Ваш ход', en: 'Your move' },
   'play.thinking': { uz: "Kompyuter o'ylamoqda...", ru: 'Компьютер думает...', en: 'Computer is thinking...' },
   'play.check': { uz: 'Shax! Shohingizni himoya qiling.', ru: 'Шах! Защитите короля.', en: 'Check! Protect your king.' },
-  'play.win': { uz: 'Mat! Siz yutdingiz! 🎉', ru: 'Мат! Вы победили! 🎉', en: 'Checkmate! You win! 🎉' },
+  'play.win': { uz: 'Mot! Siz yutdingiz! 🎉', ru: 'Мат! Вы победили! 🎉', en: 'Checkmate! You win! 🎉' },
   'play.lose': {
-    uz: "Mat. Bu safar kompyuter yutdi — yana urinib ko'ring!",
+    uz: "Mot. Bu safar kompyuter yutdi — yana urinib ko'ring!",
     ru: 'Мат. На этот раз победил компьютер — попробуйте ещё!',
     en: 'Checkmate. The computer won this time — try again!',
   },
   'play.stalemate': { uz: 'Pat — durang.', ru: 'Пат — ничья.', en: 'Stalemate — draw.' },
   'play.insufficient': {
-    uz: "Durang: mat qo'yish uchun kuch yetarli emas.",
+    uz: "Durang: mot qo'yish uchun kuch yetarli emas.",
     ru: 'Ничья: недостаточно материала для мата.',
     en: 'Draw: insufficient material.',
   },

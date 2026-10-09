@@ -21,7 +21,7 @@ const CAPTURE_ALL = T(
   `Возьмите все фигуры соперника!`,
   `Capture all the enemy pieces!`,
 )
-const MATE_IN_ONE = T(`Bir yurishda mat qo'ying!`, `Поставьте мат в один ход!`, `Checkmate in one move!`)
+const MATE_IN_ONE = T(`Bir yurishda mot qo'ying!`, `Поставьте мат в один ход!`, `Checkmate in one move!`)
 const EN_PASSANT_TASK = T(
   `Raqib piyodasi ikki katak yuradi. Uni o'tib ketayotganda urib oling!`,
   `Пешка соперника пойдёт на два поля. Возьмите её на проходе!`,
@@ -518,7 +518,7 @@ export const LESSONS: Lesson[] = [
     id: 'checkmate',
     section: 'goal',
     icon: 'bK',
-    title: T(`Mat`, `Мат`, `Checkmate`),
+    title: T(`Mot`, `Мат`, `Checkmate`),
     summary: T(`O'yinning asosiy maqsadi`, `Главная цель игры`, `The goal of the game`),
     steps: [
       {
@@ -526,7 +526,7 @@ export const LESSONS: Lesson[] = [
         fen: 'R5k1/5ppp/8/8/8/8/8/6K1 b - - 0 1',
         arrows: [{ from: 'a8', to: 'g8', color: 'red' }],
         text: T(
-          `Agar shohga shax berilgan bo'lsa va undan **qutulishning iloji bo'lmasa**, bu **mat**. Mat qo'ygan o'yinchi g'alaba qozonadi — bu shaxmatning asosiy maqsadi!\n\nRasmda qora shoh shax ostida: u hech qayerga yura olmaydi (o'z piyodalari to'sib turibdi), ruhni urib ham, to'sib ham bo'lmaydi.`,
+          `Agar shohga shax berilgan bo'lsa va undan **qutulishning iloji bo'lmasa**, bu **mot**. Mot qo'ygan o'yinchi g'alaba qozonadi — bu shaxmatning asosiy maqsadi!\n\nRasmda qora shoh shax ostida: u hech qayerga yura olmaydi (o'z piyodalari to'sib turibdi), ruhni urib ham, to'sib ham bo'lmaydi.`,
           `Если королю объявлен шах и **защититься от него невозможно** — это **мат**. Поставивший мат побеждает — это и есть главная цель шахмат!\n\nНа диаграмме чёрный король под шахом: ему некуда отступить (мешают свои пешки), а ладью нельзя ни взять, ни закрыться от неё.`,
           `If the king is in check and there is **no way to escape**, it is **checkmate**. The player who delivers checkmate wins — that is the goal of chess!\n\nIn the diagram the black king is in check: it cannot move (its own pawns are in the way), and the rook can be neither captured nor blocked.`,
         ),
@@ -538,7 +538,7 @@ export const LESSONS: Lesson[] = [
         fen: 'rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2',
         goal: { type: 'mate' },
         text: T(
-          `Oqlar ikkita yomon yurish qilishdi. Qoralar bilan bir yurishda mat qo'ying! (Bu «ahmoqona mat» deb ataladi — eng tez mat.)`,
+          `Oqlar ikkita yomon yurish qilishdi. Qoralar bilan bir yurishda mot qo'ying! (Bu «ahmoqona mot» deb ataladi — eng tez mot.)`,
           `Белые сделали два плохих хода. Поставьте мат чёрными в один ход! (Это «дурацкий мат» — самый быстрый мат в шахматах.)`,
           `White has made two bad moves. Checkmate in one with Black! (This is "Fool's Mate" — the fastest mate in chess.)`,
         ),
@@ -567,7 +567,7 @@ export const LESSONS: Lesson[] = [
         fen: '7k/8/5K2/8/8/8/8/6Q1 w - - 0 1',
         goal: { type: 'mate' },
         text: T(
-          `Mat qo'ying, lekin **pat qilib qo'ymang**!`,
+          `Mot qo'ying, lekin **pat qilib qo'ymang**!`,
           `Поставьте мат, но **не допустите пат**!`,
           `Deliver checkmate — but **don't stalemate**!`,
         ),
@@ -576,7 +576,7 @@ export const LESSONS: Lesson[] = [
         kind: 'info',
         fen: '8/8/3k4/8/8/4K3/8/8 w - - 0 1',
         text: T(
-          `O'yin yana quyidagi hollarda **durang** bilan tugaydi:\n• **Mat qo'yish uchun kuch yetarli emas** — masalan, faqat ikki shoh qolsa.\n• **Uch marta takrorlanish** — bir xil pozitsiya uch marta takrorlansa.\n• **50 yurish qoidasi** — 50 yurish davomida birorta ham urish yoki piyoda yurishi bo'lmasa.\n• **Kelishuv** — ikkala o'yinchi durangga rozi bo'lsa.`,
+          `O'yin yana quyidagi hollarda **durang** bilan tugaydi:\n• **Mot qo'yish uchun kuch yetarli emas** — masalan, faqat ikki shoh qolsa.\n• **Uch marta takrorlanish** — bir xil pozitsiya uch marta takrorlansa.\n• **50 yurish qoidasi** — 50 yurish davomida birorta ham urish yoki piyoda yurishi bo'lmasa.\n• **Kelishuv** — ikkala o'yinchi durangga rozi bo'lsa.`,
           `Партия также заканчивается **вничью**, если:\n• **недостаточно материала** для мата — например, остались только два короля;\n• **троекратное повторение** — одна и та же позиция повторилась три раза;\n• **правило 50 ходов** — за 50 ходов не было ни одного взятия и хода пешкой;\n• **по соглашению** — оба игрока согласились на ничью.`,
           `A game is also **drawn** when:\n• there is **insufficient material** to checkmate — for example, only the two kings are left;\n• **threefold repetition** — the same position occurs three times;\n• the **50-move rule** — 50 moves pass without any capture or pawn move;\n• **by agreement** — both players agree to a draw.`,
         ),

@@ -160,7 +160,7 @@ export const PUZZLES: Puzzle[] = [
     fen: '4r2k/6pp/7N/3Q4/8/8/5PPP/6K1 w - - 0 1',
     solution: ['d5g8', 'e8g8', 'h6f7'],
     hint: T(
-      `Farzinni g8 da qurbon qiling, keyin ot bilan «bo'g'ilgan mat» qo'ying.`,
+      `Farzinni g8 da qurbon qiling, keyin ot bilan «bo'g'ilgan mot» qo'ying.`,
       `Пожертвуйте ферзя на g8, а затем поставьте конём «спёртый мат».`,
       `Sacrifice the queen on g8, then deliver a smothered mate with the knight.`,
     ),

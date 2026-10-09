@@ -118,6 +118,12 @@ h2 {
   white-space: nowrap;
 }
 
+.brand-amp {
+  color: var(--gold);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+}
+
 .brand img {
   width: 34px;
   height: 34px;

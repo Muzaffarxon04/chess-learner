@@ -28,8 +28,10 @@ export default function App() {
     <div className="app">
       <header className="topbar">
         <a className="brand" href={href()}>
-          <img src={PIECE_IMAGES.wN} alt="" />
-          <span>{t('appName')}</span>
+          <img src={PIECE_IMAGES.wK} alt="" />
+          <span>
+            Shoh <span className="brand-amp">&amp;</span> Mot
+          </span>
         </a>
         <nav className="nav">
           {navItems.map((item) => (
